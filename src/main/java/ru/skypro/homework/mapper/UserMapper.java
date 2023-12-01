@@ -11,9 +11,12 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    @Mapping(source = "role.name", target = "role")
+    @Mapping(source = "pk", target = "id")
+
     User userToUserDTO(UserEntity userEntity);
 
-    @Mapping(source = "role", target = "role.name")
+    @Mapping(source = "id", target = "pk")
+    @Mapping(target = "ads", ignore = true)
+    @Mapping(target = "comments", ignore = true)
     UserEntity userDTOToUser(User userDTO);
 }

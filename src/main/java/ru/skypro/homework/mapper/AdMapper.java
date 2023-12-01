@@ -11,9 +11,10 @@ public interface AdMapper {
 
     AdMapper INSTANCE = Mappers.getMapper(AdMapper.class);
 
-    @Mapping(source = "author.id", target = "author")
+    @Mapping(source = "author.pk", target = "author")
     Ad adToAdDTO(AdEntity adEntity);
 
-    @Mapping(source = "author", target = "author.id")
+    @Mapping(source = "author", target = "author.pk")
+    @Mapping(target = "description", ignore = true)
     AdEntity adDTOToAd(Ad adDTO);
 }

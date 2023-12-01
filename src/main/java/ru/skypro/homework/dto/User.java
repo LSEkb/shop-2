@@ -2,9 +2,10 @@ package ru.skypro.homework.dto;
 
 import lombok.*;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class User {
     private int id;
     private String email;

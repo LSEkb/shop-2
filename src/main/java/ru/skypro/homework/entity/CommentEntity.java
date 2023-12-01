@@ -34,11 +34,9 @@ public class CommentEntity {
     private String authorFirstName;
 
     @NotNull
-    private Instant createdAt;
-
+    private Instant createdAtInst;
 
     @NotBlank
     @Size(max = 255)
     private String text;
-
 }
